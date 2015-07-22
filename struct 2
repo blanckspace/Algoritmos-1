@@ -1,0 +1,58 @@
+//Nathaly Terceros
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+using namespace std;
+struct tipo_vector
+{
+int V[];
+};
+void cargar(tipo_vector vec[],int n);
+void mostrar(tipo_vector vec[],int n);
+void espejo(tipo_vector vec[],int n);
+void main()
+{tipo_vector vec[MAX],int n);
+ do
+   {cout<<"Ingrese tamaño del vector de vectores: ";
+    cin>>n;
+   }while(n>MAX);
+   cargar(vec,n);
+   mostrar(vec,n);
+   cout<<endl<<"El espejo de vector de vectores es el siguiente ";
+   espejo(vec,n);
+   mostrar(vec,n);
+   getch();
+}
+void cargar(tipo_vector vec[],int n)
+{int i,j;
+ for(i=0;i<n;i++)
+  {for(j=0;j<n;j++)
+   {cout<<"Ingrese el vector: ";
+    cin>>vec[i].V[j];
+   }
+  }
+}
+vois mostrar(tipo_vector vec[],int n)
+{int i,j;
+ for(i=0;i<n;i++)
+  {for(j=0;j<n;j++)
+   {cout<<vec[i].V[j]<<;
+   }
+  }
+}
+void espejo(tipo_vector vec,int n)
+{int i,j,aux,tipo_vector AUX[];
+ for(i=0;i<n/2;i++)
+ {for(j=0;j<n/2;j++)
+  { aux=vec[i].V[j];
+    vec[i].V[j]=vec[i].V[n-1-i];
+    vec[i].V[n-1-i]=aux;
+  }
+  AUX[]=vec[i];
+  vec[i]=vec[n-1-i];
+  vec[n-1-i]=vec[i];
+}
+}
+
