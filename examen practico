@@ -1,0 +1,71 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include <stdio.h>
+#include <string>
+#include "conio.h"
+
+using namespace std;
+
+struct hospital
+{ 
+  int nrohospital;
+  string direccion;
+  int telefono;
+  string fechaing;
+  int nropersonal;
+};
+
+ void adicionarArchivo()
+ {FILE*ptr;
+  int i,n;
+  hospital reg;
+    ptr=fopen("hospital.dat","wb");
+    cout<<"Que numero de hospital es: ";
+	cin>>n;
+	for(i=0;i<n;i++)
+    {
+	  cout<<"Introduzca numero de hospital: ";
+	  cin>>reg.nrohospital;
+	  cout<<"Introduzca direccion: ";
+	  cin.ignore();
+	  getline(cin,reg.direccion);
+	  cout<<"Introduzca telefono: ";
+	  cin>>reg.telefono;
+	  cout<<"Introduzca fecha de ingreso: ";
+	  cin.ignore();
+	  getline(cin,reg.fechaing);
+	  cout<<"Introduzca el numero de personal: ";
+	  cin>>reg.nropersonal;
+	  fwrite(&reg,sizeof(reg),1,ptr);
+	}
+	fclose(ptr);
+ }
+
+
+
+ void mostrarArchivo()
+ { hospital reg;
+   FILE*ptr;
+   ptr=fopen("hospital.dat","rb");
+   if(ptr!=NULL)
+   {
+	   fread(&reg,sizeof(reg),1,ptr);
+	   while(feof(ptr)==false)
+	   {
+        cout<<reg.nrohospital<<"\t"<<reg.direccion<<"\t"<<reg.telefono<<reg.fechaing<<reg.nropersonal<<endl;
+		fread(&reg,sizeof(reg),1,ptr);
+       }
+     fclose(ptr);
+   }
+   else
+       {cout<<"No existe el archivo";
+        fclose(ptr);
+       }
+ }
+
+ void main()
+ {adicionarArchivo();
+  mostrarArchivo();
+  getch();
+ }
