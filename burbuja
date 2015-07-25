@@ -1,0 +1,26 @@
+// Nathaly Terceros
+
+#include <iostream>
+#include "stdafx.h"
+#include "conio.h"
+
+using namespace std;
+void cargarVector (int vec[],int n)
+{int i,j;
+ for(i=0;i<n;i++)
+  {for(j=0;j<n;j++)
+   {cout<<"Introduzca el vector: ";
+    cin>>vec[i];
+   }
+  }
+}
+void  mostrarVector (int vec[],int n)
+{int i,j;
+ for(i=0;i<n;i++)
+  {for(j=0;j<n;j++)
+  {cout<<vec[i] <<" ";
+  }
+  cout<<endl;
+  }
+ cout<<endl;
+}
