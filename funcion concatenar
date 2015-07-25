@@ -1,0 +1,24 @@
+//Nathaly Terceros
+
+#include <iostream>
+#include "stdafx.h"
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+int concatenar(int n1,int n2)
+{int nnro=0,x,menor,mayor;
+ if(n1>=n2)
+  {menor=n2;
+   mayor=n1;
+   x=obtener digito (n1);
+  }else
+      {menor=n1;
+       mayor=n2;
+       x=obtener digito (n2);
+      }
+      nnro=menor*powf(10,x);
+      nnro=nnro+mayor;
+      
+      return nnro;
+}
