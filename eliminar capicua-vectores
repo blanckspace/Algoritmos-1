@@ -1,0 +1,23 @@
+//Nathaly Terceros
+
+#include <iostream>
+#include "stdafx.h"
+#icnlude "conio.h"
+using namespace std;
+void eliminarCapicua (int vecA[],int n,int vecB[],int &m)
+{int i,j=0;
+ for(i=0;i<n;i++)
+  {if(esCapicua(vecA[i]==true))
+   {j++;
+   }
+  }
+  m=j;
+}
+bool esCapicua(int n)
+{int i,aux=n;
+bool k=false;
+  if(invertir(n)==aux)
+   {k=true;
+   }
+  return k;
+}
