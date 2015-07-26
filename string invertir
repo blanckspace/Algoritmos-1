@@ -1,0 +1,16 @@
+#include <iostream>
+#include "stdafx.h"
+#include "conio.h"
+"include <string>
+
+using namespace std;
+string invertir(string frase)
+{int i,tam;
+ string copia;
+ copia=frase;
+ tam=frase.length();
+  for(i=0;i<tam;i++)
+   {copia[i]=frase[tam-1-i];
+   }
+  return copia;
+}
