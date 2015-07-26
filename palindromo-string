@@ -1,0 +1,11 @@
+//Nathaly Terceros
+
+bool palindromo(string frase)
+{int i,tam;
+ tam=frase.length();
+ for(i=0;i<tam;i++)
+  if(frase[i]=frase[tam-1-i]
+   {return(true);
+   }
+  return false;
+}
